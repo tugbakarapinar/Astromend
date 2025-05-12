@@ -1,0 +1,23 @@
+# Visual Studio
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Build klasörleri
+/bin/
+/obj/
+
+# NuGet
+*.nupkg
+packages/
+
+# Hassas bilgiler
+*Hesap Bilgileri.txt
+*.pfx
+*.key
+
+# Diğer
+.vs/
+*.log
+
