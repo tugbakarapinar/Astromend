@@ -1,0 +1,163 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="ModelHub.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Messages">
+          <Key>
+            <PropertyRef Name="recid" />
+          </Key>
+          <Property Name="recid" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="clientRecevierId" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="receiverUserID" Type="int" Nullable="false" />
+          <Property Name="senderUserID" Type="int" Nullable="false" />
+          <Property Name="message" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="visibleUserID" Type="int" Nullable="false" />
+          <Property Name="seen" Type="bit" Nullable="false" />
+          <Property Name="isMobile" Type="bit" Nullable="false" />
+          <Property Name="language" Type="nvarchar" MaxLength="4" Nullable="false" />
+          <Property Name="temporaryMessage" Type="bit" Nullable="false" />
+          <Property Name="isImage" Type="bit" Nullable="false" />
+          <Property Name="senderProfileImage" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="timeOut" Type="bit" Nullable="false" />
+          <Property Name="createdDate" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="NotificationMessages">
+          <Key>
+            <PropertyRef Name="recid" />
+          </Key>
+          <Property Name="recid" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="receiverUserID" Type="int" Nullable="false" />
+          <Property Name="senderUserId" Type="int" Nullable="false" />
+          <Property Name="isDeletedUser" Type="int" />
+          <Property Name="summaryMessage" Type="nvarchar" MaxLength="100" />
+          <Property Name="receiverProfileImage" Type="nvarchar" MaxLength="200" />
+          <Property Name="senderProfileImage" Type="nvarchar" MaxLength="200" />
+          <Property Name="receiverNickName" Type="nvarchar" MaxLength="50" />
+          <Property Name="senderNickName" Type="nvarchar" MaxLength="50" />
+          <Property Name="isRead" Type="bit" Nullable="false" />
+          <Property Name="isNotification" Type="bit" Nullable="false" />
+          <Property Name="isImage" Type="bit" />
+          <Property Name="createdDate" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="ModelHubStoreContainer">
+          <EntitySet Name="Messages" EntityType="Self.Messages" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="NotificationMessages" EntityType="Self.NotificationMessages" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="ModelHub" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Messages">
+          <Key>
+            <PropertyRef Name="recid" />
+          </Key>
+          <Property Name="recid" Type="Guid" Nullable="false" />
+          <Property Name="clientRecevierId" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="receiverUserID" Type="Int32" Nullable="false" />
+          <Property Name="senderUserID" Type="Int32" Nullable="false" />
+          <Property Name="message" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="visibleUserID" Type="Int32" Nullable="false" />
+          <Property Name="seen" Type="Boolean" Nullable="false" />
+          <Property Name="isMobile" Type="Boolean" Nullable="false" />
+          <Property Name="language" Type="String" MaxLength="4" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="temporaryMessage" Type="Boolean" Nullable="false" />
+          <Property Name="isImage" Type="Boolean" Nullable="false" />
+          <Property Name="senderProfileImage" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="timeOut" Type="Boolean" Nullable="false" />
+          <Property Name="createdDate" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="NotificationMessages">
+          <Key>
+            <PropertyRef Name="recid" />
+          </Key>
+          <Property Name="recid" Type="Guid" Nullable="false" />
+          <Property Name="receiverUserID" Type="Int32" Nullable="false" />
+          <Property Name="senderUserId" Type="Int32" Nullable="false" />
+          <Property Name="isDeletedUser" Type="Int32" />
+          <Property Name="summaryMessage" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="receiverProfileImage" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="senderProfileImage" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="receiverNickName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="senderNickName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="isRead" Type="Boolean" Nullable="false" />
+          <Property Name="isNotification" Type="Boolean" Nullable="false" />
+          <Property Name="isImage" Type="Boolean" />
+          <Property Name="createdDate" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityContainer Name="EntitiesHub" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Messages" EntityType="Self.Messages" />
+          <EntitySet Name="NotificationMessages" EntityType="Self.NotificationMessages" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ModelHubStoreContainer" CdmEntityContainer="EntitiesHub">
+          <EntitySetMapping Name="Messages">
+            <EntityTypeMapping TypeName="ModelHub.Messages">
+              <MappingFragment StoreEntitySet="Messages">
+                <ScalarProperty Name="recid" ColumnName="recid" />
+                <ScalarProperty Name="clientRecevierId" ColumnName="clientRecevierId" />
+                <ScalarProperty Name="receiverUserID" ColumnName="receiverUserID" />
+                <ScalarProperty Name="senderUserID" ColumnName="senderUserID" />
+                <ScalarProperty Name="message" ColumnName="message" />
+                <ScalarProperty Name="visibleUserID" ColumnName="visibleUserID" />
+                <ScalarProperty Name="seen" ColumnName="seen" />
+                <ScalarProperty Name="isMobile" ColumnName="isMobile" />
+                <ScalarProperty Name="language" ColumnName="language" />
+                <ScalarProperty Name="temporaryMessage" ColumnName="temporaryMessage" />
+                <ScalarProperty Name="isImage" ColumnName="isImage" />
+                <ScalarProperty Name="senderProfileImage" ColumnName="senderProfileImage" />
+                <ScalarProperty Name="timeOut" ColumnName="timeOut" />
+                <ScalarProperty Name="createdDate" ColumnName="createdDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NotificationMessages">
+            <EntityTypeMapping TypeName="ModelHub.NotificationMessages">
+              <MappingFragment StoreEntitySet="NotificationMessages">
+                <ScalarProperty Name="recid" ColumnName="recid" />
+                <ScalarProperty Name="receiverUserID" ColumnName="receiverUserID" />
+                <ScalarProperty Name="senderUserId" ColumnName="senderUserId" />
+                <ScalarProperty Name="isDeletedUser" ColumnName="isDeletedUser" />
+                <ScalarProperty Name="summaryMessage" ColumnName="summaryMessage" />
+                <ScalarProperty Name="receiverProfileImage" ColumnName="receiverProfileImage" />
+                <ScalarProperty Name="senderProfileImage" ColumnName="senderProfileImage" />
+                <ScalarProperty Name="receiverNickName" ColumnName="receiverNickName" />
+                <ScalarProperty Name="senderNickName" ColumnName="senderNickName" />
+                <ScalarProperty Name="isRead" ColumnName="isRead" />
+                <ScalarProperty Name="isNotification" ColumnName="isNotification" />
+                <ScalarProperty Name="isImage" ColumnName="isImage" />
+                <ScalarProperty Name="createdDate" ColumnName="createdDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
