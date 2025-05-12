@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Models.HubAdo
+namespace RealTimeHub.DB
 {
     using System;
     using System.Collections.Generic;

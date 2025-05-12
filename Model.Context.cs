@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Models.Ado
+namespace RealTimeHub.DB
 {
     using System;
     using System.Data.Entity;
@@ -25,90 +25,7 @@ namespace Models.Ado
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<C_Log_Errors> C_Log_Errors { get; set; }
-        public virtual DbSet<C_Log_SmsBildirimleri> C_Log_SmsBildirimleri { get; set; }
-        public virtual DbSet<C_Log_UserLocal> C_Log_UserLocal { get; set; }
-        public virtual DbSet<adminUserRoles> adminUserRoles { get; set; }
-        public virtual DbSet<adminUsers> adminUsers { get; set; }
-        public virtual DbSet<ApplicationControl> ApplicationControl { get; set; }
-        public virtual DbSet<blog> blog { get; set; }
-        public virtual DbSet<city> city { get; set; }
-        public virtual DbSet<country> country { get; set; }
-        public virtual DbSet<defaultAskTestiCevapAciklama> defaultAskTestiCevapAciklama { get; set; }
-        public virtual DbSet<defaultAskTestiCevaplar> defaultAskTestiCevaplar { get; set; }
-        public virtual DbSet<defaultAskTestiSorular> defaultAskTestiSorular { get; set; }
-        public virtual DbSet<defaultContact> defaultContact { get; set; }
-        public virtual DbSet<defaultHavale> defaultHavale { get; set; }
-        public virtual DbSet<defaultIliskiDanismani> defaultIliskiDanismani { get; set; }
-        public virtual DbSet<defaultKarakterTipleri> defaultKarakterTipleri { get; set; }
-        public virtual DbSet<defaultOdemeler> defaultOdemeler { get; set; }
-        public virtual DbSet<defaultSorunBildir> defaultSorunBildir { get; set; }
-        public virtual DbSet<defaultText> defaultText { get; set; }
-        public virtual DbSet<defaultUserAsk> defaultUserAsk { get; set; }
-        public virtual DbSet<duvarCanli> duvarCanli { get; set; }
-        public virtual DbSet<duvarCanliBegenenler> duvarCanliBegenenler { get; set; }
-        public virtual DbSet<evlilik> evlilik { get; set; }
-        public virtual DbSet<goldHareket> goldHareket { get; set; }
-        public virtual DbSet<goldManuel> goldManuel { get; set; }
-        public virtual DbSet<gtt> gtt { get; set; }
-        public virtual DbSet<iliski_danismani> iliski_danismani { get; set; }
-        public virtual DbSet<islemBegen> islemBegen { get; set; }
-        public virtual DbSet<islemEngel> islemEngel { get; set; }
-        public virtual DbSet<islemFavori> islemFavori { get; set; }
-        public virtual DbSet<islemGezen> islemGezen { get; set; }
-        public virtual DbSet<islemHediye> islemHediye { get; set; }
-        public virtual DbSet<islemHediyeler> islemHediyeler { get; set; }
-        public virtual DbSet<islemMesaj> islemMesaj { get; set; }
-        public virtual DbSet<islemPuan> islemPuan { get; set; }
-        public virtual DbSet<islemResimGoster> islemResimGoster { get; set; }
-        public virtual DbSet<islemResimler> islemResimler { get; set; }
-        public virtual DbSet<islemSikayet> islemSikayet { get; set; }
-        public virtual DbSet<Log_userAdvert> Log_userAdvert { get; set; }
-        public virtual DbSet<Log_userLogin> Log_userLogin { get; set; }
-        public virtual DbSet<soruAlkolAliyormu> soruAlkolAliyormu { get; set; }
-        public virtual DbSet<soruBoy> soruBoy { get; set; }
-        public virtual DbSet<soruBurc> soruBurc { get; set; }
-        public virtual DbSet<soruCalismaSekli> soruCalismaSekli { get; set; }
-        public virtual DbSet<soruCalistigiKurum> soruCalistigiKurum { get; set; }
-        public virtual DbSet<soruCocukDurumu> soruCocukDurumu { get; set; }
-        public virtual DbSet<soruCocukIstermi> soruCocukIstermi { get; set; }
-        public virtual DbSet<soruDini> soruDini { get; set; }
-        public virtual DbSet<soruEgitim> soruEgitim { get; set; }
-        public virtual DbSet<soruFizikselEngel> soruFizikselEngel { get; set; }
-        public virtual DbSet<soruGiyim> soruGiyim { get; set; }
-        public virtual DbSet<soruGozRengi> soruGozRengi { get; set; }
-        public virtual DbSet<soruIlgiAlanlari> soruIlgiAlanlari { get; set; }
-        public virtual DbSet<soruKilo> soruKilo { get; set; }
-        public virtual DbSet<soruKiminle> soruKiminle { get; set; }
-        public virtual DbSet<soruKitap> soruKitap { get; set; }
-        public virtual DbSet<soruMedeniHal> soruMedeniHal { get; set; }
-        public virtual DbSet<soruMeslek> soruMeslek { get; set; }
-        public virtual DbSet<soruMezhep> soruMezhep { get; set; }
-        public virtual DbSet<soruNamaz> soruNamaz { get; set; }
-        public virtual DbSet<soruOruc> soruOruc { get; set; }
-        public virtual DbSet<soruSacRengi> soruSacRengi { get; set; }
-        public virtual DbSet<soruSaglik> soruSaglik { get; set; }
-        public virtual DbSet<soruSigara> soruSigara { get; set; }
-        public virtual DbSet<soruSpor> soruSpor { get; set; }
-        public virtual DbSet<soruYabanciDil> soruYabanciDil { get; set; }
-        public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
-        public virtual DbSet<tmp_IS_TAKIP> tmp_IS_TAKIP { get; set; }
-        public virtual DbSet<tmp_UserContactReqired> tmp_UserContactReqired { get; set; }
-        public virtual DbSet<tmp_WINF_Mobile_BILDIRIM_Reject> tmp_WINF_Mobile_BILDIRIM_Reject { get; set; }
-        public virtual DbSet<tmp_WINF_SMS_BILDIRIM> tmp_WINF_SMS_BILDIRIM { get; set; }
-        public virtual DbSet<userMax> userMax { get; set; }
-        public virtual DbSet<users> users { get; set; }
-        public virtual DbSet<usersDetail> usersDetail { get; set; }
-        public virtual DbSet<usersNotifications> usersNotifications { get; set; }
-        public virtual DbSet<usersShareWall> usersShareWall { get; set; }
-        public virtual DbSet<usersUygunUyeler> usersUygunUyeler { get; set; }
-        public virtual DbSet<uyelikTip> uyelikTip { get; set; }
-        public virtual DbSet<uyelikTurPaket> uyelikTurPaket { get; set; }
-        public virtual DbSet<goldElit> goldElit { get; set; }
-        public virtual DbSet<goldHediye> goldHediye { get; set; }
-        public virtual DbSet<goldOncelik> goldOncelik { get; set; }
-        public virtual DbSet<subscriber> subscriber { get; set; }
-        public virtual DbSet<signedAgremeents> signedAgremeents { get; set; }
-        public virtual DbSet<usersAstrology> usersAstrology { get; set; }
+        public virtual DbSet<Messages> Messages { get; set; }
+        public virtual DbSet<NotificationMessages> NotificationMessages { get; set; }
     }
 }

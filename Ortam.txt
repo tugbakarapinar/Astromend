@@ -1,0 +1,3 @@
+REACT VERSIYON UYUMLULUĞU:
+Node JS v16.20.2
+Python 3.12.6

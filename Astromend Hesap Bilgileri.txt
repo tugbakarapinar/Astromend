@@ -1,0 +1,24 @@
+Astromend hesap bilgileri
+GMAIL
+astromend-developer@gmail.com - Dg@!89>sf?2025
+GMAIL BAĞLILIKLAR
+1) Firabase
+
+
+JAVA KEYSTORE
+		command: keytool -genkeypair -v -storetype PKCS12 -keystore agnobil-astromend.keystore -alias agnobil-astromend-key-alias -keyalg RSA -keysize 2048 -validity 90000
+		password: Agno?Astromend2025
+
+		Certificate fingerprints:
+				 SHA1: 04:78:15:78:11:84:C9:9E:DE:AD:1B:56:25:88:22:8F:CE:B1:51:4C
+				 SHA256: 0A:CA:BD:AC:6C:F8:DC:84:9C:03:1D:FC:8D:09:98:63:BC:07:FB:A2:23:ED:0E:B2:80:C1:9C:ED:A3:E3:16:3A
+		Signature algorithm name: SHA256withRSA
+		Subject Public Key Algorithm: 2048-bit RSA key
+		Version: 3
+
+		Extensions:
+		#1: ObjectId: 2.5.29.14 Criticality=false
+		SubjectKeyIdentifier [
+		KeyIdentifier [
+		0000: D6 9B ED C1 D0 1E 48 03   2C B4 CB CD BB D2 11 C5  ......H.,.......
+		0010: A3 F9 01 1B                                        ....]]

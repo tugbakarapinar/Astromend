@@ -1,22 +1,22 @@
 {
 	"folders": [
 		{
-			"path": "../../../Downloads/Astromend/astromend-mobile-api"
+			"path": "../astromend-mobile-api"
 		},
 		{
-			"path": "../../../Downloads/Astromend/DATABASES"
+			"path": "../DATABASES"
 		},
 		{
-			"path": "../../../Downloads/Astromend/OTHERS"
+			"path": "."
 		},
 		{
-			"path": "../../../Downloads/Astromend/RAR DOSYALARI"
+			"path": "../RAR DOSYALARI"
 		},
 		{
-			"path": "../../../Downloads/Astromend/React native için uyumluluk modları"
+			"path": "../React native için uyumluluk modları"
 		},
 		{
-			"path": "../../../Downloads/Astromend/RealTimeHub"
+			"path": "../RealTimeHub"
 		}
 	]
 }

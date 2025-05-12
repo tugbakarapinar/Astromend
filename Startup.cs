@@ -1,40 +1,29 @@
-﻿using Microsoft.Owin;
-using Microsoft.Owin.Security.OAuth;
-using app_api.Auth;
+﻿using System;
+using System.Threading.Tasks;
+using Microsoft.Owin;
 using Owin;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Http;
+using Microsoft.Owin.Cors;
+using Microsoft.AspNet.SignalR;
 
-[assembly: OwinStartup(typeof(app_api.App_Start.Startup))]
+[assembly: OwinStartup(typeof(RealTimeHub.Startup))]
 
-namespace app_api.App_Start
+namespace RealTimeHub
 {
     public class Startup
     {
-        public void Configuration(Owin.IAppBuilder app)
+        public void Configuration(IAppBuilder app)
         {
-            HttpConfiguration httpConfiguration = new HttpConfiguration();
-            ConfigureOAuth(app);
-
-            WebApiConfig.Register(httpConfiguration);
-            app.UseWebApi(httpConfiguration);
-        }
-        public void ConfigureOAuth(IAppBuilder app)
-        {
-            OAuthAuthorizationServerOptions oAuthAuthorizationServerOptions = new OAuthAuthorizationServerOptions()
+            var RHUBUserIdProvider = new RHUBUserIdProvider();
+            GlobalHost.DependencyResolver.Register(typeof(IUserIdProvider), () => RHUBUserIdProvider);
+            app.Map("/signalr/hubs", map =>
             {
-                TokenEndpointPath = new PathString("/app/api/security/login"),
-                AccessTokenExpireTimeSpan = TimeSpan.FromDays(5000),
-                AllowInsecureHttp = true,
-                Provider = new AuthorizationServerProvider()
-
-            };
-
-            app.UseOAuthAuthorizationServer(oAuthAuthorizationServerOptions);
-            app.UseOAuthBearerAuthentication(new OAuthBearerAuthenticationOptions());
+                map.UseCors(CorsOptions.AllowAll);
+                var hubConfiguration = new HubConfiguration
+                {
+                    EnableJSONP = true
+                };
+                map.RunSignalR(hubConfiguration);
+            });        
         }
     }
 }
